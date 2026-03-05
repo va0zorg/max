@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Андрей Максимов — Спикер, писатель, режиссёр</title>
+  <meta name="description" content="Андрей Маркович Максимов — журналист, писатель, театральный режиссёр, телеведущий и профессиональный спикер. Лекции, книги, спектакли.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Cormorant+SC:wght@300;400;500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&family=Jost:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============================================
+     NAVIGATION
+     ============================================ -->
+<nav class="nav" id="mainNav">
+  <div class="nav-logo">А.М.</div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#" onclick="openModal('modal-bio'); return false;">Биография</a></li>
+    <li><a href="#lectures">Лекции</a></li>
+    <li><a href="#books">Книги</a></li>
+    <li><a href="https://vk.ru/id296892997" target="_blank">Блог</a></li>
+    <li><a href="#theatre">Спектакли</a></li>
+    <li><a href="#media">Медиа</a></li>
+    <li><a href="#interviews">Интервью</a></li>
+    <li><a href="#organizers">Организаторам</a></li>
+  </ul>
+  <div class="nav-burger" id="navBurger" onclick="toggleMobileMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- ============================================
+     HERO SECTION
+     ============================================ -->
+<section id="hero">
+  <!-- Left: Content -->
+  <div class="hero-content">
+    <!-- SVG decorative elements -->
+    <svg class="deco-corner" viewBox="0 0 120 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M5 75 Q5 5 75 5" stroke="#1A1A1A" stroke-width="1.5" fill="none" stroke-dasharray="4 3" opacity="0.2"/>
+      <circle cx="5" cy="75" r="3" fill="#FFE535" opacity="0.8"/>
+    </svg>
+
+    <h1 class="hero-name">
+      <span class="hero-name-first">Андрей</span>
+      <span class="hero-name-last">Максимов</span>
+    </h1>
+
+    <blockquote class="hero-quote">
+      <span class="q-open">“</span>Хороший разговор — это всегда совместное творчество<span class="q-close">”</span>
+    </blockquote>
+
+    <div class="hero-actions">
+      <a href="#organizers" class="btn-primary"><span>Пригласить с лекцией</span></a>
+      <button onclick="openModal('modal-bio')" class="btn-outline">Биография</button>
+      <a href="https://vk.ru/id296892997" target="_blank" class="btn-outline">Блог</a>
+    </div>
+
+    <!-- Quick lectures preview -->
+    <div class="hero-lectures-preview">
+      <div class="hero-lectures-title">
+        <svg width="24" height="2" viewBox="0 0 24 2"><rect width="24" height="2" fill="#FFE535"/></svg>
+        Популярные лекции
+      </div>
+      <div class="hero-lectures-list">
+        <div class="hero-lecture-item animate-in" onclick="openLectureModal(0)">
+          <div class="hero-lecture-photo">
+            <img src="images/icons/1.png" alt="Главные ошибки в общении">
+          </div>
+          <div class="hero-lecture-name">Главные ошибки в общении и способы их преодоления</div>
+          <div class="hero-lecture-more">Подробнее <span class="arrow">→</span></div>
+        </div>
+        <div class="hero-lecture-item animate-in" onclick="openLectureModal(1)">
+          <div class="hero-lecture-photo">
+            <img src="images/icons/3.png" alt="Как не стать врагом своему ребёнку">
+          </div>
+          <div class="hero-lecture-name">Как не стать врагом своему ребёнку?</div>
+          <div class="hero-lecture-more">Подробнее <span class="arrow">→</span></div>
+        </div>
+        <div class="hero-lecture-item animate-in" onclick="openLectureModal(2)">
+          <div class="hero-lecture-photo">
+            <img src="images/icons/2.png" alt="Корпоративное открытое интервью">
+          </div>
+          <div class="hero-lecture-name">Корпоративное открытое интервью</div>
+          <div class="hero-lecture-more">Подробнее <span class="arrow">→</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Notebook ruled lines decoration -->
+    <div class="hero-ruled-lines">
+      <div></div><div></div><div></div>
+    </div>
+  </div>
+
+  <!-- Right: Photo -->
+  <div class="hero-photo">
+    <img src="images/maksimov-hero.jpg" alt="Андрей Максимов">
+    <div class="hero-photo-overlay"></div>
+    <!-- Hand-drawn annotation -->
+    <div class="hero-annotation">
+      <svg class="annotation-svg" viewBox="0 0 160 60" fill="none">
+        <path d="M10 30 Q 40 10 80 28 Q 110 40 145 20" stroke="#1A1A1A" stroke-width="1.2" fill="none" opacity="0.35"/>
+        <path d="M138 14 L145 20 L136 23" stroke="#1A1A1A" stroke-width="1.2" fill="none" opacity="0.35"/>
+      </svg>
+    </div>
+  </div>
+
+  <div class="scroll-hint">
+    <span>Листать</span>
+    <div class="scroll-hint-line"></div>
+  </div>
+</section>
+
+<!-- ============================================
+     LECTURES SECTION
+     ============================================ -->
+<section class="section" id="lectures">
+  <div class="section-inner">
+    <div class="section-rule">
+      <div class="section-rule-line"></div>
+      <div class="section-rule-dot"></div>
+      <div class="section-rule-line"></div>
+    </div>
+    <h2 class="section-title animate-in">Лекции</h2>
+
+    <p class="lectures-intro animate-in">
+      Лекции Андрея Максимова — это не академические монологи, а живые встречи, построенные на диалоге и внимании к аудитории. Каждое выступление — это пространство доверия, в котором соединяются психологическая глубина, журналистская точность и личный опыт.
+    </p>
+
+    <!-- 8 Lecture Cards -->
+    <div class="lectures-grid">
+      <div class="lecture-card animate-in" onclick="openLectureModal(0)">
+        <span class="lecture-icon">
+          <img src="images/icons/1.png" alt="">
+        </span>
+        <div class="lecture-name">Главные ошибки в общении и способы их преодоления</div>
+        <p class="lecture-desc">Как научиться эффективно общаться, задавая правильные вопросы и получая нужные ответы.</p>
+        <div class="lecture-btn">Подробнее <span class="arrow">→</span></div>
+      </div>
+      <div class="lecture-card animate-in" onclick="openLectureModal(1)">
+        <span class="lecture-icon">
+          <img src="images/icons/4.png" alt="">
+        </span>
+        <div class="lecture-name">Психофилософия: как оказывать первую психологическую помощь</div>
+        <p class="lecture-desc">Помогаем себе и другим справляться, беря ответственность за свою жизнь.</p>
+        <div class="lecture-btn">Подробнее <span class="arrow">→</span></div>
+      </div>
+      <div class="lecture-card animate-in" onclick="openLectureModal(2)">
+        <span class="lecture-icon">
+          <img src="images/icons/3.png" alt="">
+        </span>
+        <div class="lecture-name">Как не стать врагом своему ребёнку</div>
+        <p class="lecture-desc">Выстраиваем отношения с ребёнком, помогая ему найти себя в современном мире.</p>
+        <div class="lecture-btn">Подробнее <span class="arrow">→</span></div>
+      </div>
+      <div class="lecture-card animate-in" onclick="openLectureModal(3)">
+        <span class="lecture-icon">
+          <img src="images/icons/8.png" alt="">
+        </span>
+        <div class="lecture-name">Поговорим начистоту</div>
+        <p class="lecture-desc">Встреча-диалог, где аудитория сама определяет тему для профессионального или жизненного разговора.</p>
+        <div class="lecture-btn">Подробнее <span class="arrow">→</span></div>
+      </div>
+      <div class="lecture-card animate-in" onclick="openLectureModal(4)">
+        <span class="lecture-icon">
+          <img src="images/icons/7.png" alt="">
+        </span>
+        <div class="lecture-name">Забытые открытия в педагогике</div>
+        <p class="lecture-desc">Лекция о великих педагогических идеях прошлого и их практическом применении сегодня.</p>
+        <div class="lecture-btn">Подробнее <span class="arrow">→</span></div>
+      </div>
+      <div class="lecture-card animate-in" onclick="openLectureModal(5)">
+        <span class="lecture-icon">
+          <img src="images/icons/2.png" alt="">
+        </span>
+        <div class="lecture-name">Корпоративное открытое интервью</div>
+        <p class="lecture-desc">Интерактивный формат публичного интервью первых лиц компании.</p>
+        <div class="lecture-btn">Подробнее <span class="arrow">→</span></div>
+      </div>
+      <div class="lecture-card animate-in" onclick="openLectureModal(6)">
+        <span class="lecture-icon">
+          <img src="images/icons/5.png" alt="">
+        </span>
+        <div class="lecture-name">Вечер творческих</div>
+        <p class="lecture-desc">Встреча с историями о знаменитых людях и поэтической атмосферой камерного вечера.</p>
+        <div class="lecture-btn">Подробнее <span class="arrow">→</span></div>
+      </div>
+      <div class="lecture-card animate-in" onclick="openLectureModal(7)">
+        <span class="lecture-icon">
+          <img src="images/icons/6.png" alt="">
+        </span>
+        <div class="lecture-name">Обсудим тему лекции?</div>
+        <p class="lecture-desc">Индивидуально разработанная лекция под оговорённые задачи, цели и аудиторию.</p>
+        <div class="lecture-btn">Подробнее <span class="arrow">→</span></div>
+      </div>
+    </div>
+
+    <div class="lectures-cta animate-in">
+      <a href="#organizers" class="btn-primary"><span>Пригласить с лекцией</span></a>
+    </div>
+
+    <!-- Two videos strip -->
+    <div class="lectures-video-strip animate-in">
+      <div class="lecture-video-item">
+        <iframe src="https://vk.com/video_ext.php?oid=-189047791&id=456239334&hash=c29abfbf06e4c7a2&hd=4"
+          allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" allowfullscreen></iframe>
+        <div class="lecture-video-label">Что такое психофилософия</div>
+      </div>
+      <div class="lecture-video-item">
+        <iframe src="https://vk.com/video_ext.php?oid=-213845423&id=456239581&hash=bc5b3450640c9e6e&hd=3"
+          allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" allowfullscreen></iframe>
+        <div class="lecture-video-label">Секреты общения</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================
+     BOOKS SECTION
+     ============================================ -->
+<section class="section" id="books">
+  <div class="section-inner">
+    <div class="section-rule">
+      <div class="section-rule-line"></div>
+      <div class="section-rule-dot"></div>
+      <div class="section-rule-line"></div>
+    </div>
+    <h2 class="section-title animate-in">Книги</h2>
+    <p class="animate-in" style="color: var(--gray-mid); font-family: var(--font-ui); font-size: 0.9rem; margin-top: 0.5rem; margin-bottom: 2.5rem;">Нажмите на обложку, чтобы узнать о книге больше</p>
+
+    <div style="position: relative;">
+      <div class="books-sticker">Бестселлер Forbes</div>
+
+      <!-- All 11 books in unified grid -->
+      <div class="books-grid animate-in">
+        <div class="book-item" onclick="window.open('https://www.ozon.ru/product/yanush-korchak-zhizn-do-legendy-maksimov-andrey-markovich-elektronnaya-kniga-1353265615/?at=k2toB2onVIVzBXGTK4q6VwSYvzxYXU8Kl20RHD5pnjp', '_blank')">
+          <img src="images/book-01.jpg" alt="Януш Корчак: жизнь до легенды" class="book-cover">
+          <div class="book-shadow"></div>
+          <div class="nb-corner-fold"></div>
+        </div>
+        <div class="book-item" onclick="window.open('https://www.ozon.ru/product/mariya-montessori-maksimov-andrey-markovich-1680923802/', '_blank')">
+          <img src="images/book-02.jpg" alt="Мария Монтессори" class="book-cover">
+          <div class="book-shadow"></div>
+        </div>
+        <div class="book-item" onclick="window.open('https://www.ozon.ru/product/pestalotstsi-maksimov-andrey-markovich-856472455/?at=Eqtkx4kWrhpkLL47cYKKxkPuvVPrxRF4v23ZligxnpR9', '_blank')">
+          <img src="images/book-03.jpg" alt="Песталоцци" class="book-cover">
+          <div class="book-shadow"></div>
+        </div>
+        <div class="book-item" onclick="window.open('https://www.ozon.ru/product/kak-pomoch-svoemu-rebenku-okonchit-shkolu-i-ne-soyti-s-uma-maksimov-andrey-markovich-697724893/', '_blank')">
+          <img src="images/book-04.jpg" alt="Как помочь своему ребёнку окончить школу" class="book-cover">
+          <div class="book-shadow"></div>
+        </div>
+        <div class="book-item" onclick="window.open('https://www.ozon.ru/product/kak-pomoch-svoemu-rebenku-perezhit-pervuyu-lyubov-maksimov-andrey-markovich-697724897/', '_blank')">
+          <img src="images/book-05.jpg" alt="Как помочь своему ребёнку пережить первую любовь" class="book-cover">
+          <div class="book-shadow"></div>
+        </div>
+        <div class="book-item" onclick="window.open('https://www.piter.com/collection/knigi-a-maksimova/product/kak-ne-stat-vragom-svoemu-rebenku-2?ysclid=mlp975hw6r415924530', '_blank')">
+          <img src="images/book-06.jpg" alt="Как не стать врагом своему ребёнку" class="book-cover">
+          <div class="book-shadow"></div>
+        </div>
+        <div class="book-item" onclick="window.open('https://www.ozon.ru/product/oboydemsya-bez-pedagogiki-kniga-dlya-roditeley-kotorye-hotyat-vospityvat-detey-250787269/', '_blank')">
+          <img src="images/book-07.jpg" alt="Обойдёмся без педагогики" class="book-cover">
+          <div class="book-shadow"></div>
+        </div>
+        <div class="book-item" onclick="window.open('https://www.ozon.ru/product/prakticheskaya-psihofilosofiya-maksimov-a-3397828260/?at=36tWKDWm1T83NZPKcrNZmjVi29wNypI6Q7kxXfw4WzY0', '_blank')">
+          <img src="images/book-08.jpg" alt="Практическая психофилософия" class="book-cover">
+          <div class="book-shadow"></div>
+        </div>
+        <div class="book-item" onclick="window.open('https://www.ozon.ru/product/psihofilosofiya-2-0-kniga-dlya-teh-kto-ustal-boyatsya-2590179280/?at=MZtv3Bv5KiOPPzEAUP5x6YLUVOjoPOt72wO2rCK4rnY0', '_blank')">
+          <img src="images/book-09.jpg" alt="Психофилософия 2.0" class="book-cover">
+          <div class="book-shadow"></div>
+        </div>
+        <div class="book-item" onclick="window.open('https://www.ozon.ru/product/den-rozhdeniya-siney-borody-i-drugie-istorii-o-lyubvi-pesy-maksimov-andrey-markovich-1292433649/', '_blank')">
+          <img src="images/book-10.jpg" alt="День рождения Синей Бороды" class="book-cover">
+          <div class="book-shadow"></div>
+        </div>
+        <div class="book-item" onclick="window.open('https://www.ozon.ru/product/kak-okazyvat-pervuyu-psihologicheskuyu-pomoshch-zametki-psihofilosofa-3534488238/?at=vQtr8YBLvt5gZngxfD1k5y4cRDYBwXcPzRrKOhMgw2w0', '_blank')">
+          <img src="images/book-11.jpg" alt="Как оказывать первую психологическую помощь" class="book-cover">
+          <div class="book-shadow"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     THEATRE SECTION
+     ============================================ -->
+<section class="section" id="theatre">
+  <div class="section-inner">
+    <div class="section-rule">
+      <div class="section-rule-line"></div>
+      <div class="section-rule-dot"></div>
+      <div class="section-rule-line"></div>
+    </div>
+    <h2 class="section-title animate-in">Спектакли</h2>
+
+    <p class="theatre-intro animate-in">
+      Театр для Андрея Максимова — не параллельная деятельность, а естественное продолжение размышлений о человеке и его внутреннем мире. Постановки — это всегда разговор со зрителем о выборе, ответственности, любви и свободе. В центре внимания остаётся человек — со своими сомнениями, страстями и поиском смысла.
+    </p>
+
+    <div class="theatre-layout">
+      <!-- Left: Plays list -->
+      <div>
+        <span class="section-label">Режиссёрские работы</span>
+        <ul class="theatre-list">
+          <li>
+            <div>
+              <div class="theatre-list-title">«Борис Годунов» («Комедия о настоящей беде государству московскому»)</div>
+              <div class="theatre-list-venue">А. С. Пушкин · Театр имени М. Н. Ермоловой</div>
+            </div>
+          </li>
+          <li>
+            <div>
+              <div class="theatre-list-title">«Французский бенефис»</div>
+              <div class="theatre-list-venue">По французским одноактным пьесам · Театр имени А. С. Пушкина</div>
+            </div>
+          </li>
+          <li>
+            <div>
+              <div class="theatre-list-title">«Моцарт и Сальери»</div>
+              <div class="theatre-list-venue">А. С. Пушкин · Центр Высоцкого</div>
+            </div>
+          </li>
+          <li>
+            <div>
+              <div class="theatre-list-title">«Рамки приличий»</div>
+              <div class="theatre-list-venue">А. Максимов · Театр имени Владимира Маяковского</div>
+            </div>
+          </li>
+          <li>
+            <div>
+              <div class="theatre-list-title">«Лист ожидания»</div>
+              <div class="theatre-list-venue">А. Мордань · Театр имени Владимира Маяковского</div>
+            </div>
+          </li>
+          <li>
+            <div>
+              <div class="theatre-list-title">«День рождения Синей Бороды»</div>
+              <div class="theatre-list-venue">А. Максимов · Театр имени Владимира Маяковского</div>
+            </div>
+          </li>
+          <li>
+            <div>
+              <div class="theatre-list-title">«Расстроенная семья»</div>
+              <div class="theatre-list-venue">Екатерина Вторая · Русский театр, Таллинн</div>
+            </div>
+          </li>
+          <li>
+            <div>
+              <div class="theatre-list-title">«Сон императрицы»</div>
+              <div class="theatre-list-venue">А. Максимов · Театр «Модернъ»</div>
+            </div>
+          </li>
+          <li>
+            <div>
+              <div class="theatre-list-title">«Любовь в двух действиях»</div>
+              <div class="theatre-list-venue">А. Максимов · Театр «Модернъ»</div>
+            </div>
+          </li>
+          <li>
+            <div>
+              <div class="theatre-list-title">«Рококо»</div>
+              <div class="theatre-list-venue">А. Максимов · Театр Луны</div>
+            </div>
+          </li>
+          <li>
+            <div>
+              <div class="theatre-list-title">«Монолог на двоих»</div>
+              <div class="theatre-list-venue">А. Максимов · Театр Моссовета</div>
+            </div>
+          </li>
+          <li>
+            <div>
+              <div class="theatre-list-title">«Брюсов переулок»</div>
+              <div class="theatre-list-venue">А. Максимов · Театр имени Евгения Вахтангова</div>
+            </div>
+          </li>
+          <li>
+            <div>
+              <div class="theatre-list-title">«Любовь у трона»</div>
+              <div class="theatre-list-venue">А. Максимов · Театр имени Евгения Вахтангова</div>
+            </div>
+          </li>
+        </ul>
+
+        <div class="theatre-note animate-in">
+          Узнать о спектаклях Андрея Максимова и купить билеты можно на официальных сайтах театров.
+        </div>
+      </div>
+
+      <!-- Right: Photos & Videos -->
+      <div class="theatre-right">
+        <div class="theatre-photos-grid">
+          <div class="theatre-photo"><img src="images/theatre-01.jpg" alt="Спектакль"></div>
+          <div class="theatre-photo"><img src="images/theatre-02.jpg" alt="Спектакль"></div>
+          <div class="theatre-photo"><img src="images/theatre-03.jpg" alt="Спектакль"></div>
+          <div class="theatre-photo"><img src="images/theatre-04.jpg" alt="Спектакль"></div>
+        </div>
+
+        <div class="theatre-videos animate-in">
+          <div class="theatre-video-item">
+            <iframe src="https://vk.com/video_ext.php?oid=-219775182&id=456239191&hash=3906c05911d37785&hd=3"
+              allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" allowfullscreen></iframe>
+            <div class="theatre-video-label">Максимов о театре</div>
+          </div>
+          <div class="theatre-video-item">
+            <iframe src="https://rutube.ru/play/embed/aea90e43ff0d3cd2b05cdac21195a691/"
+              allow="clipboard-write; autoplay" allowfullscreen mozallowfullscreen webkitallowfullscreen></iframe>
+            <div class="theatre-video-label">О спектакле «Брюсов переулок»</div>
+          </div>
+          <div class="theatre-video-item">
+            <iframe src="https://vk.com/video_ext.php?oid=-52679152&id=456240092&hash=332fec72f0266060&hd=4"
+              allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" allowfullscreen></iframe>
+            <div class="theatre-video-label">О спектакле «Любовь у трона»</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     MEDIA SECTION
+     ============================================ -->
+<section class="section" id="media">
+  <div class="section-inner">
+    <div class="section-rule">
+      <div class="section-rule-line"></div>
+      <div class="section-rule-dot"></div>
+      <div class="section-rule-line"></div>
+    </div>
+    <h2 class="section-title animate-in">Медиа-проекты</h2>
+
+    <div class="media-layout">
+      <div class="media-text-side">
+        <p class="media-text animate-in">
+          В качестве журналиста и телеведущего Андрей Максимов начинал на Центральном телевидении в программах «Зеркало сцены» и «Автограф по субботам», где сформировался его авторский стиль — спокойный, содержательный разговор с героями и внимание к их историям. В разные годы он был ведущим и автором программ «<span class="highlight" onclick="openModal('modal-lichnye')">Личные вещи</span>», «Времечко», «Старая квартира», «Пресс-клуб» и «Мужчина и женщина», ставших заметной частью российского телевизионного пространства 1990-х и 2000-х годов.
+        </p>
+        <p class="media-text animate-in">
+          Особое место в его работе заняли авторские проекты «<span class="highlight" onclick="openModal('modal-nochnoj')">Ночной полёт</span>», а также программы «<span class="highlight" onclick="openModal('modal-nablyudatel')">Наблюдатель</span>» и «<span class="highlight" onclick="openModal('modal-dezhurny')">Дежурный по стране</span>», посвящённые культуре, обществу и актуальным вопросам времени. Передачи с участием Андрея Максимова всегда строятся на живом диалоге, уважительном отношении к собеседнику и стремлении к осмысленному разговору со зрителем.
+        </p>
+
+        <div class="media-buttons animate-in">
+          <a href="https://vkvideo.ru/playlist/-85393518_214" target="_blank" class="btn-yellow">
+            <span>▶</span> Смотреть «Наблюдатель»
+          </a>
+        </div>
+
+        <div class="media-rg animate-in">
+          <div class="media-rg-text">
+            Постоянный колумнист газеты «Российская газета», где регулярно публикует авторские тексты, посвящённые культуре, обществу, театру, образованию и вопросам человеческого общения.
+          </div>
+          <div class="media-rg-btn">
+            <a href="https://rg.ru/authors/Andrej-Maksimov?utm_referrer=https%3A%2F%2Fyandex.ru%2F" target="_blank" class="btn-outline">
+              Читать в «Российской газете»
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5 photos stack -->
+      <div class="media-photos-col animate-in">
+        <div class="media-photo-stack">
+          <div class="media-photo-item">
+            <img src="images/media-01.jpg" alt="Андрей Максимов в студии">
+          </div>
+          <div class="media-photo-item">
+            <img src="images/media-02.jpg" alt="На съёмках программы">
+          </div>
+          <div class="media-photo-item">
+            <img src="images/media-03.jpg" alt="Интервью">
+          </div>
+          <div class="media-photo-item">
+            <img src="images/media-04.jpg" alt="Телеканал Культура">
+          </div>
+          <div class="media-photo-item">
+            <img src="images/media-05.jpg" alt="Андрей Максимов">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     INTERVIEWS SECTION
+     ============================================ -->
+<section class="section" id="interviews">
+  <div class="section-inner">
+    <div class="section-rule">
+      <div class="section-rule-line"></div>
+      <div class="section-rule-dot"></div>
+      <div class="section-rule-line"></div>
+    </div>
+    <h2 class="section-title animate-in">Интервью</h2>
+
+    <div class="interviews-grid animate-in">
+      <div class="interview-item">
+        <iframe src="https://vk.com/video_ext.php?oid=-189047791&id=456239334&hash=c29abfbf06e4c7a2&hd=4"
+          allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" allowfullscreen></iframe>
+      </div>
+      <div class="interview-item">
+        <iframe src="https://vkvideo.ru/video_ext.php?oid=-211721382&id=456240038&hash=7522d1c0ba505438&hd=1"
+          allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" allowfullscreen></iframe>
+      </div>
+      <div class="interview-item">
+        <iframe src="https://rutube.ru/play/embed/e9d58ccd040727e77054c1ea75699e21/"
+          allow="clipboard-write; autoplay" allowfullscreen mozallowfullscreen webkitallowfullscreen></iframe>
+      </div>
+      <div class="interview-item">
+        <iframe src="https://vkvideo.ru/video_ext.php?oid=-104977973&id=456243435&hash=276a7d5ff9341c1f&hd=3"
+          allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" allowfullscreen></iframe>
+      </div>
+      <div class="interview-item">
+        <iframe src="https://vk.com/video_ext.php?oid=-213845423&id=456239581&hash=bc5b3450640c9e6e&hd=3"
+          allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" allowfullscreen></iframe>
+      </div>
+      <div class="interview-item">
+        <iframe src="https://vk.com/video_ext.php?oid=-219775182&id=456239191&hash=3906c05911d37785&hd=3"
+          allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     ORGANIZERS SECTION
+     ============================================ -->
+<section class="section" id="organizers">
+  <div class="section-inner">
+
+    <div class="organizers-grid">
+      <div class="organizers-text">
+        <h2 class="animate-in">Уважаемые<br><span class="underline-hand">организаторы!</span></h2>
+
+        <p class="organizers-intro animate-in">
+          Если вы планируете лекцию, конференцию, корпоративный тренинг или проект в формате живого общения, мы готовы обсудить с вами концепцию мероприятия и предложить оптимальное решение. Возможно как очное, так и on-line участие.
+        </p>
+
+        <div class="organizers-subtitle">Форматы выступлений</div>
+        <ul class="formats-list animate-in">
+          <li>Публичная лекция-встреча</li>
+          <li>Корпоративная лекция</li>
+          <li>Авторская программа по запросу</li>
+          <li>Публичное интервью</li>
+          <li>Дискуссии и панельные сессии</li>
+          <li>Мастер-класс</li>
+          <li>Тренинг</li>
+          <li>Участие в подкастах</li>
+        </ul>
+
+        <div class="duration-info animate-in">
+          <div class="organizers-subtitle" style="margin-top: 0; margin-bottom: 0.8rem;">Продолжительность</div>
+          <p>Стандартная лекция: 1,5–2 часа</p>
+          <p>Формат сессии вопросов и ответов — по договорённости</p>
+          <p>Возможен модульный формат или цикл встреч</p>
+        </div>
+      </div>
+
+      <div>
+        <div class="contact-card animate-in">
+          <h3>Связаться с нами</h3>
+          <div class="subtitle">По вопросам организации мероприятий</div>
+
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div>
+              <div class="contact-label">Email</div>
+              <div class="contact-value"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="84edeae2ebc4e9e5eff7ede9ebf2aaf6f1">[email&#160;protected]</a></div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.44 2 2 0 0 1 3.6 1.25h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.81a16 16 0 0 0 6.08 6.08l1.62-1.62a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div>
+              <div class="contact-label">Телефон</div>
+              <div class="contact-value">+7 (___) ___-__-__</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            <div>
+              <div class="contact-label">Контактное лицо</div>
+              <div class="contact-value">Менеджер по работе с организаторами</div>
+            </div>
+          </div>
+
+          <div class="mediakit-link">
+            <span class="mediakit-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>
+            </span>
+            <div class="mediakit-text">
+              <strong>Медиакит спикера</strong>
+              Скачать PDF с описанием лекций и биографией
+            </div>
+          </div>
+
+          <a href="/cdn-cgi/l/email-protection#c8a1a6aea788a5a9a3bba1a5a7bee6babd" class="btn-yellow" style="width: 100%; justify-content: center;">
+            Написать организатору
+          </a>
+        </div>
+
+        <div style="margin-top: 1rem; padding: 1.2rem 1.5rem; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+          <p style="font-family: var(--font-ui); font-size: 0.72rem; letter-spacing: 0.1em; color: rgba(255,255,255,0.35); text-transform: uppercase;">
+            Пресс-материалы по запросу:
+          </p>
+          <p style="font-size: 0.85rem; color: rgba(255,255,255,0.5); margin-top: 0.5rem;">
+            Фото в высоком разрешении · Описание лекций
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     FOOTER
+     ============================================ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      Андрей Максимов
+      <span>© 2025 Все права защищены</span>
+    </div>
+    <ul class="footer-links">
+      <li><a href="#lectures">Лекции</a></li>
+      <li><a href="#books">Книги</a></li>
+      <li><a href="#theatre">Спектакли</a></li>
+      <li><a href="#media">Медиа</a></li>
+      <li><a href="#organizers">Контакты</a></li>
+    </ul>
+  </div>
+  <div class="footer-copy">
+    Персональный сайт Андрея Марковича Максимова · Журналист · Писатель · Режиссёр · Телеведущий
+  </div>
+</footer>
+
+<!-- ============================================================
+     MODALS
+     ============================================================ -->
+
+<!-- BIO Modal -->
+<div class="modal-overlay" id="modal-bio" onclick="closeModalOutside(event, 'modal-bio')">
+  <div class="modal-box modal-wide" style="max-height: 90vh;">
+    <button class="modal-close" onclick="closeModal('modal-bio')">✕</button>
+    <span class="modal-tag">О Максимове</span>
+    <h2 class="modal-title">Биография</h2>
+    <div class="modal-body">
+      <p>Андрей Маркович Максимов — российский писатель, телеведущий, драматург, журналист и создатель авторской психологической системы «Психофилософия».</p>
+      <p>Родился 25 апреля 1959 года в Москве в творческой семье: его отец, Марк Максимов, был поэтом и переводчиком, а мать работала в литературной сфере. С юных лет Андрей пробовал себя в слове — уже в 14 лет его рассказы публиковались на страницах газет.</p>
+    </div>
+
+    <!-- Bio photo slider -->
+    <div class="bio-slider" id="bioSlider">
+      <div class="bio-slider-track" id="bioSliderTrack">
+        <div class="bio-slider-slide"><img src="images/bio-01.jpg" alt="Андрей Максимов"></div>
+        <div class="bio-slider-slide"><img src="images/bio-02.jpg" alt="Андрей Максимов"></div>
+        <div class="bio-slider-slide"><img src="images/bio-03.jpg" alt="Андрей Максимов"></div>
+        <div class="bio-slider-slide"><img src="images/bio-04.jpg" alt="Андрей Максимов"></div>
+        <div class="bio-slider-slide"><img src="images/bio-05.jpg" alt="Андрей Максимов"></div>
+        <div class="bio-slider-slide"><img src="images/bio-06.jpg" alt="Андрей Максимов"></div>
+        <div class="bio-slider-slide"><img src="images/bio-07.jpg" alt="Андрей Максимов"></div>
+        <div class="bio-slider-slide"><img src="images/bio-08.jpg" alt="Андрей Максимов"></div>
+        <div class="bio-slider-slide"><img src="images/bio-09.jpg" alt="Андрей Максимов"></div>
+        <div class="bio-slider-slide"><img src="images/bio-10.jpg" alt="Андрей Максимов"></div>
+        <div class="bio-slider-slide"><img src="images/bio-11.jpg" alt="Андрей Максимов"></div>
+        <div class="bio-slider-slide"><img src="images/bio-12.jpg" alt="Андрей Максимов"></div>
+      </div>
+      <button class="bio-slider-btn bio-slider-prev" onclick="bioSliderMove(-1)" aria-label="Назад">&#8592;</button>
+      <button class="bio-slider-btn bio-slider-next" onclick="bioSliderMove(1)" aria-label="Вперёд">&#8594;</button>
+    </div>
+    <div class="bio-slider-dots" id="bioSliderDots"></div>
+
+    <div class="modal-body">
+      <p>Закончил факультет журналистики МГУ и прошёл путь от работы в газетах и журналах до телеведущего и режиссёра. Максимов вёл программы на различных каналах, включая творческие и культурологические проекты, за которые он и его передачи были отмечены премией ТЭФИ. Он также является членом Академии российского телевидения, колумнистом «Российской газеты» и редактором-консультантом Всероссийской государственной телерадиокомпании.</p>
+      <p>На Телеканале Культура Андрей Максимов многие годы является постоянным ведущим программы «Наблюдатель», в которой обсуждает актуальные культурные и общественные темы, приглашая к диалогу экспертов, деятелей искусства и широкую аудиторию.</p>
+      <p>С течением времени творческая деятельность Максимова органично переросла в психологическое и коммуникационное наставничество. Он разработал систему «Психофилософия», направленную на глубокое понимание себя и других и на гармонизацию жизненных отношений. Эта система стала основой ряда его книг — многие из которых стали бестселлерами и получили широкое признание читателей.</p>
+      <p>Особое внимание публики привлекла книга «Как не стать врагом своему ребёнку», которая вошла в список самых продаваемых нон-фикшн изданий по версии журнала Forbes. Он также выступил автором серии биографий великих педагогов — Иоганна Генриха Песталоцци, Януша Корчака и Марии Монтессори — включённых в знаменитую коллекцию ЖЗЛ.</p>
+      <p>Активно выступает с лекциями по психологии общения, корпоративных и личных отношений, вопросам воспитания детей и личностного роста — как в крупных городах, так и на профильных площадках по всей России.</p>
+      <p>Помимо психологической литературы, в его творчестве — художественные произведения, пьесы и сценарии. Спектакли Андрея Марковича Максимова сегодня идут на сцене театра имени Евгения Вахтангова и многих других московских и региональных театров.</p>
+      <p>Максимов признаётся, что его основная творческая мотивация — это поиск истины о человеческих отношениях и стремление помочь другим увидеть себя глубже, чем кажется на поверхности.</p>
+    </div>
+
+    <!-- Bio video -->
+    <div class="bio-video">
+      <iframe src="https://vkvideo.ru/video_ext.php?oid=-211721382&id=456240038&hash=7522d1c0ba505438&hd=1"
+        allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" allowfullscreen></iframe>
+    </div>
+  </div>
+</div>
+
+<!-- NABLYUDATEL Modal -->
+<div class="modal-overlay" id="modal-nablyudatel" onclick="closeModalOutside(event, 'modal-nablyudatel')">
+  <div class="modal-box modal-wide modal-dark">
+    <button class="modal-close" onclick="closeModal('modal-nablyudatel')">✕</button>
+    <span class="modal-tag">Программа</span>
+    <h2 class="modal-title">«Наблюдатель»</h2>
+    <p style="color: rgba(255,255,255,0.55); font-size: 0.88rem; margin-bottom: 1.5rem;">Телеканал Культура · Культурологическая программа</p>
+    <div class="video-modal-grid">
+      <div>
+        <div class="video-modal-item">
+          <iframe src="https://vk.com/video_ext.php?oid=-111095517&id=456239787&hash=4108011b7ee0a9f5&hd=3"
+            allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" allowfullscreen></iframe>
+        </div>
+        <div class="video-modal-item-label">Гость: Александр Ширвиндт</div>
+      </div>
+      <div>
+        <div class="video-modal-item">
+          <iframe src="https://vk.com/video_ext.php?oid=-85393518&id=456255858&hash=969b7210026e217e&hd=3"
+            allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" allowfullscreen></iframe>
+        </div>
+        <div class="video-modal-item-label">Гость: Никита Михалков</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- DEZHURNY Modal -->
+<div class="modal-overlay" id="modal-dezhurny" onclick="closeModalOutside(event, 'modal-dezhurny')">
+  <div class="modal-box modal-wide modal-dark">
+    <button class="modal-close" onclick="closeModal('modal-dezhurny')">✕</button>
+    <span class="modal-tag">Программа</span>
+    <h2 class="modal-title">«Дежурный по стране»</h2>
+    <div class="video-modal-grid">
+      <div class="video-modal-item full-width">
+        <iframe src="https://vk.com/video_ext.php?oid=9052768&id=456239893&hash=cd8cb53249bbbec8&hd=1"
+          allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- NOCHNOJ POLYOT Modal -->
+<div class="modal-overlay" id="modal-nochnoj" onclick="closeModalOutside(event, 'modal-nochnoj')">
+  <div class="modal-box modal-wide modal-dark">
+    <button class="modal-close" onclick="closeModal('modal-nochnoj')">✕</button>
+    <span class="modal-tag">Программа</span>
+    <h2 class="modal-title">«Ночной полёт»</h2>
+    <div class="video-modal-grid">
+      <div class="video-modal-item full-width">
+        <iframe src="https://vk.com/video_ext.php?oid=-46908877&id=165441594&hash=3874430537d20aa0"
+          allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- LICHNYE VESHCHI Modal -->
+<div class="modal-overlay" id="modal-lichnye" onclick="closeModalOutside(event, 'modal-lichnye')">
+  <div class="modal-box modal-wide modal-dark">
+    <button class="modal-close" onclick="closeModal('modal-lichnye')">✕</button>
+    <span class="modal-tag">Программа</span>
+    <h2 class="modal-title">«Личные вещи»</h2>
+    <div class="video-modal-grid">
+      <div class="video-modal-item full-width">
+        <iframe src="https://vk.com/video_ext.php?oid=-16011286&id=155587750&hash=e083e59d1a1f7469&hd=1"
+          allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- LECTURE DETAIL Modals (8 pieces) -->
+<div class="modal-overlay" id="modal-lecture" onclick="closeModalOutside(event, 'modal-lecture')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal-lecture')">✕</button>
+    <span class="lecture-modal-icon" id="lectureModalIcon"></span>
+    <span class="modal-tag">Лекция</span>
+    <h2 class="modal-title" id="lectureModalTitle"></h2>
+    <div class="modal-body" id="lectureModalBody"></div>
+    <div class="lecture-outcomes" id="lectureOutcomes">
+      <h4>Что получат участники</h4>
+      <ul id="lectureOutcomesList"></ul>
+    </div>
+    <div style="margin-top: 2rem;">
+      <a href="#organizers" class="btn-primary" onclick="closeModal('modal-lecture')">
+          <span>Пригласить с лекцией</span>
+        </a>
+      </div>
+  </div>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox-overlay" id="lightboxOverlay" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <img class="lightbox-img" id="lightboxImg" src="" alt="">
+</div>
+
+<script src="scripts.js"></script>
+</body>
+</html>
