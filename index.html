@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Андрей Максимов — Спикер, писатель, режиссёр</title>
-  <meta name="description" content="Андрей Маркович Максимов — журналист, писатель, театральный режиссёр, телеведущий и профессиональный спикер. Лекции, книги, спектакли.">
+  <title>Андрей Максимов — журналист, писатель, режиссёр, телеведущий</title>
+  <meta name="description" content="Андрей Маркович Максимов — журналист, писатель, театральный режиссёр, телеведущий. Лекции, книги, спектакли.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Cormorant+SC:wght@300;400;500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&family=Jost:wght@200;300;400;500;600&display=swap" rel="stylesheet">
@@ -80,7 +80,7 @@
           <div class="hero-lecture-name">Как не стать врагом своему ребёнку?</div>
           <div class="hero-lecture-more">Подробнее <span class="arrow">→</span></div>
         </div>
-        <div class="hero-lecture-item animate-in" onclick="openLectureModal(2)">
+        <div class="hero-lecture-item animate-in" onclick="openLectureModal(5)">
           <div class="hero-lecture-photo">
             <img src="images/icons/2.png" alt="Корпоративное открытое интервью">
           </div>
@@ -203,13 +203,8 @@
       <a href="#organizers" class="btn-primary"><span>Пригласить с лекцией</span></a>
     </div>
 
-    <!-- Two videos strip -->
-    <div class="lectures-video-strip animate-in">
-      <div class="lecture-video-item">
-        <iframe src="https://vk.com/video_ext.php?oid=-189047791&id=456239334&hash=c29abfbf06e4c7a2&hd=4"
-          allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" allowfullscreen></iframe>
-        <div class="lecture-video-label">Что такое психофилософия</div>
-      </div>
+    <!-- Video strip -->
+    <div class="lectures-video-strip lectures-video-strip--single animate-in">
       <div class="lecture-video-item">
         <iframe src="https://vk.com/video_ext.php?oid=-213845423&id=456239581&hash=bc5b3450640c9e6e&hd=3"
           allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" allowfullscreen></iframe>
@@ -453,14 +448,14 @@
         </div>
 
         <div class="media-rg animate-in">
-          <div class="media-rg-text">
-            Постоянный колумнист газеты «Российская газета», где регулярно публикует авторские тексты, посвящённые культуре, обществу, театру, образованию и вопросам человеческого общения.
+          <div class="media-rg-row">
+            <div class="media-rg-text">
+              Постоянный колумнист газеты «Российская газета», где регулярно публикует авторские тексты, посвящённые культуре, обществу, театру, образованию и вопросам человеческого общения.
+            </div>
           </div>
-          <div class="media-rg-btn">
-            <a href="https://rg.ru/authors/Andrej-Maksimov?utm_referrer=https%3A%2F%2Fyandex.ru%2F" target="_blank" class="btn-outline">
-              Читать в «Российской газете»
-            </a>
-          </div>
+          <a href="https://rg.ru/authors/Andrej-Maksimov?utm_referrer=https%3A%2F%2Fyandex.ru%2F" target="_blank" class="btn-outline">
+            Читать в «Российской газете»
+          </a>
         </div>
       </div>
 
@@ -501,10 +496,6 @@
     <h2 class="section-title animate-in">Интервью</h2>
 
     <div class="interviews-grid animate-in">
-      <div class="interview-item">
-        <iframe src="https://vk.com/video_ext.php?oid=-189047791&id=456239334&hash=c29abfbf06e4c7a2&hd=4"
-          allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" allowfullscreen></iframe>
-      </div>
       <div class="interview-item">
         <iframe src="https://vkvideo.ru/video_ext.php?oid=-211721382&id=456240038&hash=7522d1c0ba505438&hd=1"
           allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" allowfullscreen></iframe>
@@ -631,7 +622,7 @@
   <div class="footer-inner">
     <div class="footer-brand">
       Андрей Максимов
-      <span>© 2025 Все права защищены</span>
+      <span>© 2026 Все права защищены</span>
     </div>
     <ul class="footer-links">
       <li><a href="#lectures">Лекции</a></li>
@@ -640,6 +631,7 @@
       <li><a href="#media">Медиа</a></li>
       <li><a href="#organizers">Контакты</a></li>
     </ul>
+
   </div>
   <div class="footer-copy">
     Персональный сайт Андрея Марковича Максимова · Журналист · Писатель · Режиссёр · Телеведущий
@@ -789,12 +781,6 @@
         </a>
       </div>
   </div>
-</div>
-
-<!-- LIGHTBOX -->
-<div class="lightbox-overlay" id="lightboxOverlay" onclick="closeLightbox()">
-  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
-  <img class="lightbox-img" id="lightboxImg" src="" alt="">
 </div>
 
 <script src="scripts.js"></script>

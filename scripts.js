@@ -85,9 +85,10 @@ const lectures = [
   {
     title: 'Корпоративное открытое интервью',
     teaser: 'Интерактивный формат публичного интервью первых лиц компании',
-    body: `<p>Когда руководитель ищет способ проще и быстрее донести до сотрудников свои идеи, Максимов берет публичное интервью у руководителя, с подключением вопросов сотрудников из зала. Это позволяет в формате открытого общения поднять важнейшие темы в работе компании. Такой формат идеально подходит для сопровождения изменений. Это профессиональная коммуникационная поддержка новой стратегии, масштабных организационных и технологических обновлений или прихода нового топ-менеджера на значимую позицию.</p>`,
+    body: `<p>Когда руководитель ищет способ проще и быстрее донести до сотрудников свои идеи, Максимов берёт публичное интервью у руководителя, с подключением вопросов сотрудников из зала. Это позволяет в формате открытого общения поднять важнейшие темы в работе компании.</p>
+    <p>Такой формат идеально подходит для сопровождения изменений. Это профессиональная коммуникационная поддержка новой стратегии, масштабных организационных и технологических обновлений или прихода нового топ-менеджера на значимую позицию.</p>`,
     outcomes: [
-      'Прозрачную коммуникацию между руководством и командой',
+      'Прозрачная коммуникация между руководством и командой',
       'Понимание целей и стратегии компании',
       'Возможность задать вопросы напрямую руководителю',
       'Формирование атмосферы открытого диалога',
@@ -332,45 +333,3 @@ document.querySelectorAll('.hero-photo img, .bio-photo img, .theatre-photo img')
     }
   };
 })();
-
-// ============================================
-// LIGHTBOX
-// ============================================
-function openLightbox(src, alt) {
-  const overlay = document.getElementById('lightboxOverlay');
-  const img = document.getElementById('lightboxImg');
-  img.src = src;
-  img.alt = alt || '';
-  overlay.classList.add('active');
-  document.body.style.overflow = 'hidden';
-}
-
-function closeLightbox() {
-  const overlay = document.getElementById('lightboxOverlay');
-  overlay.classList.remove('active');
-  document.body.style.overflow = '';
-}
-
-// Close lightbox on Escape
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') closeLightbox();
-});
-
-// Attach lightbox to all page photos (hero, theatre, media, bio slider)
-document.addEventListener('DOMContentLoaded', () => {
-  const selectors = [
-    '.hero-photo img',
-    '.theatre-photo img',
-    '.media-photo-item img',
-    '.bio-slider-slide img'
-  ];
-  selectors.forEach(sel => {
-    document.querySelectorAll(sel).forEach(img => {
-      img.classList.add('photo-zoomable');
-      img.addEventListener('click', (e) => {
-        e.stopPropagation();
-        openLightbox(img.src, img.alt);
-      });
-    });
-  });
-});
