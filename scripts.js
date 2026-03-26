@@ -28,7 +28,8 @@ const lectures = [
       'Практические техники ведения диалога и интервью в повседневной жизни',
       'Инструменты для решения конфликтов и сложных разговоров',
       'Упражнения, которые можно сразу применять в работе и личной жизни'
-    ]
+    ],
+    heroOnly: true
   },
   {
     title: 'Как помочь человеку, когда ему плохо',
@@ -40,7 +41,8 @@ const lectures = [
       'Практические советы по оказанию поддержки близким',
       'Осознание влияния привычек на качество жизни',
       'Инструменты поиска смысла и внутренней опоры'
-    ]
+    ],
+    heroOnly: true
   },
   {
     title: 'Как не стать врагом своему ребёнку',
@@ -53,7 +55,8 @@ const lectures = [
       'Подходы к формированию доверия в семье',
       'Практические решения типичных родительских проблем',
       'Понимание, как помочь ребёнку найти призвание'
-    ]
+    ],
+    heroOnly: true
   },
   {
     title: 'Поговорим начистоту',
@@ -170,15 +173,19 @@ function openLectureModal(index) {
 
   const bodyEl = document.getElementById('lectureModalBody');
   bodyEl.innerHTML = lecture.body;
-  if (lecture.teaser) {
+  if (lecture.teaser && !lecture.heroOnly) {
     bodyEl.innerHTML = `<p class="lecture-modal-teaser">${lecture.teaser}</p>` + lecture.body;
   }
 
-  const list = document.getElementById('lectureOutcomesList');
-  list.innerHTML = lecture.outcomes.map(o => `<li>${o}</li>`).join('');
-
   const outcomesBlock = document.getElementById('lectureOutcomes');
-  outcomesBlock.querySelector('h4').textContent = 'Что получит аудитория';
+  if (lecture.heroOnly) {
+    outcomesBlock.style.display = 'none';
+  } else {
+    outcomesBlock.style.display = '';
+    const list = document.getElementById('lectureOutcomesList');
+    list.innerHTML = lecture.outcomes.map(o => `<li>${o}</li>`).join('');
+    outcomesBlock.querySelector('h4').textContent = 'Что получит аудитория';
+  }
 
   openModal('modal-lecture');
 }
