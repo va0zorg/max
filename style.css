@@ -369,6 +369,16 @@ button { cursor: pointer; font-family: var(--font-ui); border: none; background:
   opacity: 0.4;
 }
 
+.hero-bio {
+  font-family: var(--font-ui);
+  font-size: 0.82rem;
+  font-weight: 300;
+  line-height: 1.75;
+  color: var(--gray-mid);
+  margin: 0 0 2.2rem;
+  max-width: 540px;
+}
+
 .hero-actions {
   display: flex;
   gap: 1rem;
@@ -992,7 +1002,7 @@ button { cursor: pointer; font-family: var(--font-ui); border: none; background:
   flex-shrink: 0;
 }
 .duration-info {
-  margin-top: 2rem;
+  margin-top: 0.5rem;
   padding: 1.5rem;
   border: 1px solid rgba(255,255,255,0.08);
 }
